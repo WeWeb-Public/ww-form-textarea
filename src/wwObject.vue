@@ -1,6 +1,6 @@
 <template>
     <div class="elem-textarea">
-        <textarea class="textarea" 
+        <textarea class="textarea"
             :name="wwObject.content.data.config.name"
             :required="wwObject.content.data.config.required"
             :placeholder="wwLang.getText(wwObject.content.data.config.placeholder)" 
@@ -8,7 +8,6 @@
             :style="style" />
     </div>
 </template>
-
 
 <script>
 /* wwManager:start */
@@ -210,6 +209,7 @@ export default {
             }
             wwLib.wwObjectHover.removeLock();
         }
+        /* wwManager:end */
     },
     created() {
         this.wwObject.content.data = this.wwObject.content.data || {}
@@ -228,6 +228,7 @@ export default {
     .textarea {
         width: 100%;
         outline: none;
+        resize: none;
     }
     ::placeholder {
         color: inherit;
