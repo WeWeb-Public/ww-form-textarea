@@ -4,17 +4,17 @@
             <div class="elem">
                 <wwManagerInput class="input" color="orange" v-model="result.textareaConfig.name" label="Name"></wwManagerInput>
             </div>
-             <div class="elem">
-                <div class="title">{{result.textareaConfig.rows}} Rows </div>
+            <div class="elem">
+                <div class="title">{{result.textareaConfig.rows}} Rows</div>
                 <wwManagerSlider class="input" :options="rowOptions" v-model="result.textareaConfig.rows" label="Rows"></wwManagerSlider>
             </div>
             <div class="elem">
-               <div class="title">Required</div>
+                <div class="title">Required</div>
                 <wwManagerRadio class="radio" v-model="result.textareaConfig.required"></wwManagerRadio>
             </div>
             <div class="elem">
                 <div class="title">Placeholder</div>
-                <wwManagerInput v-for="lang in langs" :key="lang" class="input" color="blue" v-model="result.textareaConfig.placeholder[lang]" :label="lang"></wwManagerInput>
+                <wwManagerInput v-for="lang in langs" :key="lang" class="input" color="blue" v-model="result.textareaConfig.placeholder[lang]" :label="'Placeholder - ' + lang.toUpperCase()"></wwManagerInput>
             </div>
         </div>
     </div>
@@ -72,21 +72,28 @@ export default {
     .content {
         display: flex;
         padding: 20px;
-        flex-wrap: wrap;
+        flex-direction: column;
         overflow: auto;
         width: 100%;
-        justify-content: center;
+        align-items: center;
         .elem {
-            margin: 10px 33%;
-            width: 33%;
+            margin: 10px;
+            width: 90%;
+
+            @media (min-width: 992px) {
+                width: 40%;
+            }
             .input {
                 width: 100%;
+            }
+            .input + .input {
+                margin-top: 5px;
             }
             .select {
                 width: 33%;
             }
         }
-        
+
         .title {
             color: #e02a4d;
             font-family: "Monserrat", sans-serif;

@@ -1,11 +1,6 @@
 <template>
     <div class="elem-textarea">
-        <textarea class="textarea"
-            :name="wwObject.content.data.config.name"
-            :required="wwObject.content.data.config.required"
-            :placeholder="wwLang.getText(wwObject.content.data.config.placeholder)" 
-            :rows="wwObject.content.data.config.rows || 4" 
-            :style="style" />
+        <textarea class="textarea" :name="wwObject.content.data.config.name" :required="wwObject.content.data.config.required" :placeholder="wwLang.getText(wwObject.content.data.config.placeholder)" :rows="wwObject.content.data.config.rows || 4" :style="style" />
     </div>
 </template>
 
@@ -130,7 +125,7 @@ export default {
         },
     },
     methods: {
-       getShadow(wwObjectStyle) {
+        getShadow(wwObjectStyle) {
             wwObjectStyle = wwObjectStyle || {};
             const shadow = wwObjectStyle.boxShadow || {};
             if (shadow.x || shadow.y || shadow.b || shadow.s || shadow.c) {
@@ -211,7 +206,7 @@ export default {
         }
         /* wwManager:end */
     },
-    created() {
+    mounted() {
         this.wwObject.content.data = this.wwObject.content.data || {}
         this.wwObject.content.data.config = this.wwObject.content.data.config || {}
         this.wwObject.content.data.style = this.wwObject.content.data.style || {}
@@ -229,6 +224,7 @@ export default {
         width: 100%;
         outline: none;
         resize: none;
+        font-family: "Arial";
     }
     ::placeholder {
         color: inherit;

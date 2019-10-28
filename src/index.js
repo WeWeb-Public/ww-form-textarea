@@ -9,6 +9,10 @@ const addComponent = function () {
         wwLib.wwObject.register({
             /* wwManager:start */
             cmsOptions: {
+                displayName: {
+                    en: 'Form Text',
+                    fr: 'Texte de Formulaire'
+                },
                 wwObjectMenu: {
                     items: [
                         {
@@ -38,7 +42,7 @@ const addComponent = function () {
                         }
                     },
                     style: {
-                        fontSize: 1, 
+                        fontSize: 1,
                         color: 'black',
                         backgroundColor: 'white',
                         borderRadius: 5,
